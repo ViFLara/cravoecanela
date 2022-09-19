@@ -23,6 +23,7 @@ public class ClienteService {
         return savedCliente;
     }
 
+    @Transactional(readOnly = true)
     public Optional<Cliente> findById(Long id) {
         Optional<Cliente> foundCliente = clienteRepository.findById(id);
         return Optional.ofNullable(foundCliente.orElse(null));
