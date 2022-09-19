@@ -1,5 +1,6 @@
 package br.com.performacao.api.cravoecanela.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class Cliente {
     private String cpf;
     private String email;
     private String telefone;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
     private String genero;
     private String estadoCivil;
