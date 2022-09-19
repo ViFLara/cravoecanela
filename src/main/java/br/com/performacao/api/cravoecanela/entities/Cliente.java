@@ -1,5 +1,6 @@
 package br.com.performacao.api.cravoecanela.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,6 +30,7 @@ public class Cliente {
     private String estadoCivil;
     private String profissao;
     @OneToOne
+    @JsonIgnore
     private Endereco endereco;
 
     @Override

@@ -4,9 +4,12 @@ import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
@@ -25,8 +28,11 @@ public class ClienteService {
         return Optional.ofNullable(foundCliente.orElse(null));
     }
 
-    public List<Cliente> findAll() {
-        return clienteRepository.findAll();
+    @Transactional(readOnly = true)
+    public Page<Cliente> findAll(Pageable pageable) {
+        clienteRepository.findAll();
+        Page<Cliente> result = clienteRepository.findAll(pageable);
+        return result;
     }
 
     public void deleteById(Long id) throws ChangeSetPersister.NotFoundException {

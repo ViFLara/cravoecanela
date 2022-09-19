@@ -7,8 +7,9 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,9 +31,9 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Cliente>> findAll() {
-        List<Cliente> list = service.findAll();
-        return ResponseEntity.ok().body(list);
+    public ResponseEntity<Page<Cliente>> findAll(Pageable pageable) {
+        Page<Cliente> list = service.findAll(pageable);
+        return ResponseEntity.ok(list);
     }
 
     @DeleteMapping("/{id}")
