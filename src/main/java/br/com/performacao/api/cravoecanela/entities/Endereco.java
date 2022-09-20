@@ -27,6 +27,6 @@ public class Endereco {
     private String cidade;
     private String estado;
     private String pais;
-    @OneToOne
+    @OneToOne(mappedBy = "endereco")
     private Cliente cliente;
 }

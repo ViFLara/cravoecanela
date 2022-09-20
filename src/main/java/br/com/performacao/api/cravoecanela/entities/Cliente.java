@@ -31,8 +31,8 @@ public class Cliente {
     private String genero;
     private String estadoCivil;
     private String profissao;
-    @OneToOne
-    @JsonIgnore
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
 
     @Override
