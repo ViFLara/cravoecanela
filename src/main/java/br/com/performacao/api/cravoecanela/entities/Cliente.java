@@ -38,13 +38,13 @@ public class Cliente {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Cliente)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Cliente cliente = (Cliente) o;
-        return getId().equals(cliente.getId()) && getCpf().equals(cliente.getCpf()) && getEmail().equals(cliente.getEmail()) && getTelefone().equals(cliente.getTelefone());
+        return Objects.equals(id, cliente.id) && Objects.equals(nome, cliente.nome) && Objects.equals(cpf, cliente.cpf) && Objects.equals(email, cliente.email) && Objects.equals(telefone, cliente.telefone) && Objects.equals(dataNascimento, cliente.dataNascimento) && Objects.equals(genero, cliente.genero) && Objects.equals(estadoCivil, cliente.estadoCivil) && Objects.equals(profissao, cliente.profissao) && Objects.equals(endereco, cliente.endereco);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCpf(), getEmail(), getTelefone());
+        return Objects.hash(id, nome, cpf, email, telefone, dataNascimento, genero, estadoCivil, profissao, endereco);
     }
 }
