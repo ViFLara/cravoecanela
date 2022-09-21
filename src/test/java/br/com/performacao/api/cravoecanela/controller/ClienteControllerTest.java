@@ -21,7 +21,7 @@ public class ClienteControllerTest {
     @Test
     public void greetingShouldReturnDefaultMessage() {
 
-    
+        doReturn
 
         assertThat(this.restTemplate
                 .getForObject("http://localhost:" + port + "/clientes",

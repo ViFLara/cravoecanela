@@ -1,6 +1,9 @@
 package br.com.performacao.api.cravoecanela.controller.dto;
 
 import br.com.performacao.api.cravoecanela.entities.Endereco;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,7 @@
 package br.com.performacao.api.cravoecanela.services;
 
 import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
+import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
 import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.mapper.ClienteMapper;
 import br.com.performacao.api.cravoecanela.repositories.ClienteRepository;
@@ -9,9 +10,8 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Optional;
 
 @Service
@@ -23,8 +23,8 @@ public class ClienteService {
     @Autowired
     private ClienteMapper clienteMapper;
 
-    public ClienteDTO createCliente(ClienteDTO cliente) {
-        Cliente savedCliente = clienteRepository.save(clienteMapper.toClienteEntity(cliente));
+    public ClienteDTO createCliente(Cliente cliente) {
+        Cliente savedCliente = clienteRepository.save(cliente);
         return clienteMapper.toClienteDTO(savedCliente);
     }
 
@@ -35,9 +35,21 @@ public class ClienteService {
     }
 
     @Transactional(readOnly = true)
-    public Page<Cliente> findAll(Pageable pageable) {
+    public PageDTO<ClienteDTO> findAll(Pageable pageable) {
         Page<Cliente> result = clienteRepository.findAll(pageable);
-        return result;
+
+        PageDTO<ClienteDTO> clientes = new PageDTO<>(clienteMapper.toClienteDTOList(result.getContent()));
+
+        clientes.setFirst(result.isFirst());
+        clientes.setLast(result.isLast());
+        clientes.setNumber(result.getNumber());
+        clientes.setNumberOfElements(result.getNumberOfElements());
+        clientes.setSize(result.getSize());
+        clientes.setTotalElements(result.getTotalElements());
+        clientes.setTotalPages(result.getTotalPages());
+        clientes.setSort(result.getSort());
+
+        return clientes;
     }
 
     public void deleteById(Long id) throws ChangeSetPersister.NotFoundException {

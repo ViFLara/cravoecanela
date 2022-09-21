@@ -1,11 +1,11 @@
 package br.com.performacao.api.cravoecanela.controller;
 
 import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
+import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
 import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ClienteDTO createCliente(@RequestBody ClienteDTO cliente)  {
+    public ClienteDTO createCliente(@RequestBody Cliente cliente)  {
         return service.createCliente(cliente);
     }
 
@@ -32,7 +32,7 @@ public class ClienteController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Page<Cliente> findAll(Pageable pageable) {
+    public PageDTO<ClienteDTO> findAll(Pageable pageable) {
         return service.findAll(pageable);
     }
 
