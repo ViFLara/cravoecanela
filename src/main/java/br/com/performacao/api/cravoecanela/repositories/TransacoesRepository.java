@@ -1,4 +1,7 @@
 package br.com.performacao.api.cravoecanela.repositories;
 
-public interface TransacoesRepository {
+import br.com.performacao.api.cravoecanela.entities.Transacoes;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TransacoesRepository extends JpaRepository<Transacoes, Long> {
 }
