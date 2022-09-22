@@ -52,7 +52,7 @@ public class PageDTO<T> {
     public <R> PageDTO<R> mapEach(Function<T, R> func){
 
         if(this.content != null && !this.content.isEmpty())
-            return new PageDTO<>(this.content.stream().map(func).collect(Collectors.toList()), this);
+            return null;//new PageDTO<>(this.content.stream().map(func).collect(Collectors.toList()), this);
 
         return new PageDTO<>();
     }
@@ -61,6 +61,4 @@ public class PageDTO<T> {
     public boolean isEmpty() {
         return this.content == null || this.content.isEmpty();
     }
-
-
 }
