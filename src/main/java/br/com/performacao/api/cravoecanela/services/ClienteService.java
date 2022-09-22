@@ -36,9 +36,10 @@ public class ClienteService {
 
     @Transactional(readOnly = true)
     public PageDTO<ClienteDTO> findAll(Pageable pageable) {
+
         Page<Cliente> result = clienteRepository.findAll(pageable);
 
-     /*   PageDTO<ClienteDTO> clientes = new PageDTO<>(clienteMapper.toClienteDTOList(result.getContent()));
+        PageDTO<ClienteDTO> clientes = new PageDTO<>(clienteMapper.toClienteDTOList(result.getContent()));
 
         clientes.setFirst(result.isFirst());
         clientes.setLast(result.isLast());
@@ -49,8 +50,7 @@ public class ClienteService {
         clientes.setTotalPages(result.getTotalPages());
         clientes.setSort(result.getSort());
 
-        return clientes;*/
-        return null;
+        return clientes;
     }
 
     public void deleteById(Long id) throws ChangeSetPersister.NotFoundException {

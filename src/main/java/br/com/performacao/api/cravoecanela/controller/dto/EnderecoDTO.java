@@ -1,14 +1,12 @@
 package br.com.performacao.api.cravoecanela.controller.dto;
 
 import br.com.performacao.api.cravoecanela.entities.Cliente;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.OneToOne;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

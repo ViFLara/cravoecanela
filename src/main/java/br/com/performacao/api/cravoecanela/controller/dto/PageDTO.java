@@ -11,10 +11,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
 @Getter
 @Setter
-@Builder
 public class PageDTO<T> {
 
     private boolean first = true;
@@ -61,4 +59,72 @@ public class PageDTO<T> {
     public boolean isEmpty() {
         return this.content == null || this.content.isEmpty();
     }
+/*
+    public void setFirst(boolean first) {
+        this.first = first;
+    }
+
+    public void setLast(boolean last) {
+        this.last = last;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getNumberOfElements() {
+        return numberOfElements;
+    }
+
+    public void setNumberOfElements(int numberOfElements) {
+        this.numberOfElements = numberOfElements;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public long getTotalElements() {
+        return totalElements;
+    }
+
+    public void setTotalElements(long totalElements) {
+        this.totalElements = totalElements;
+    }
+
+    public long getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(long totalPages) {
+        this.totalPages = totalPages;
+    }
+
+    public Sort getSort() {
+        return sort;
+    }
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
+    }
+
+    public String getPageKey() {
+        return pageKey;
+    }
+
+    public void setPageKey(String pageKey) {
+        this.pageKey = pageKey;
+    }
+
+    public List<T> getContent() {
+        return content;
+    }*/
 }
