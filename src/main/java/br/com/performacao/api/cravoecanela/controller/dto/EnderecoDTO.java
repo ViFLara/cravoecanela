@@ -1,9 +1,17 @@
 package br.com.performacao.api.cravoecanela.controller.dto;
 
 import br.com.performacao.api.cravoecanela.entities.Cliente;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.OneToOne;
 
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class EnderecoDTO {
 
     private String tipo;
