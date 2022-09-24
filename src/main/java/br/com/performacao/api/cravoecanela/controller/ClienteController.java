@@ -36,6 +36,10 @@ public class ClienteController {
         return service.findAll(pageable);
     }
 
+    @PutMapping
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void update(@RequestBody ClienteDTO cliente) throws ChangeSetPersister.NotFoundException { service.update(cliente); }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable Long id) throws ChangeSetPersister.NotFoundException {

@@ -53,6 +53,12 @@ public class ClienteService {
         return clientes;
     }
 
+    public void update(ClienteDTO clienteDTO) throws ChangeSetPersister.NotFoundException {
+        Cliente cliente = clienteMapper.toClienteEntity(clienteDTO);
+        verifyIfExists(cliente.getId());
+        clienteRepository.save(cliente);
+    }
+
     public void deleteById(Long id) throws ChangeSetPersister.NotFoundException {
         verifyIfExists(id);
         clienteRepository.deleteById(id);
