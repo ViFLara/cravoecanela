@@ -13,5 +13,5 @@ public class ServicosDTO {
 
     private String descricao;
     private BigDecimal preco;
-    private BigDecimal quantidade_horas;
+    private BigDecimal quantidadeHoras;
 }

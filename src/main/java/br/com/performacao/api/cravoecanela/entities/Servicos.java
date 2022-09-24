@@ -9,13 +9,14 @@ import java.math.BigDecimal;
 @Setter
 @Builder
 @Entity
-@Table(name = "servicos")
+@Table(name = "servico")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Servicos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "servico_id")
     private Long id;
     private String descricao;
     private BigDecimal preco;
