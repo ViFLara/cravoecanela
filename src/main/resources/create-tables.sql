@@ -20,7 +20,7 @@ create table endereco (
     bairro varchar(45) not null,
     cep varchar(9) not null,
     cidade varchar(30) not null,
-    complemento varchar(10) not null,
+    complemento varchar(10),
     estado varchar(2) not null,
     logradouro varchar(100) not null,
     numero integer not null,

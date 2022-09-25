@@ -1,6 +1,7 @@
 package br.com.performacao.api.cravoecanela.controller.exceptions;
 
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -62,6 +63,45 @@ public class ControllerAdvisor {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("errorCode","BAD_REQUEST");
         body.put("errorMessage", ex.getCause().getCause().toString());
+        body.put("timestamp", LocalDateTime.now());
+
+        return new ResponseEntity<>(body,HttpStatus.BAD_REQUEST);
+
+    }
+
+    @ExceptionHandler(NoSuchMethodError.class)
+    protected ResponseEntity<Object> handleNoSuchMethodError(
+            DataIntegrityViolationException ex, WebRequest request){
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("errorCode","INTERNAL_ERROR");
+        body.put("errorMessage", ex.getLocalizedMessage());
+        body.put("timestamp", LocalDateTime.now());
+
+        return new ResponseEntity<>(body,HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    protected ResponseEntity<Object> handleIllegalArgumentException(
+            DataIntegrityViolationException ex, WebRequest request){
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("errorCode","INTERNAL_ERROR");
+        body.put("errorMessage", ex.getLocalizedMessage());
+        body.put("timestamp", LocalDateTime.now());
+
+        return new ResponseEntity<>(body,HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+
+    @ExceptionHandler(InvalidDataAccessApiUsageException.class)
+    protected ResponseEntity<Object> handleInvalidDataAccessApiUsageException(
+            DataIntegrityViolationException ex, WebRequest request){
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("errorCode","BAD_REQUEST");
+        body.put("errorMessage", ex.getLocalizedMessage());
         body.put("timestamp", LocalDateTime.now());
 
         return new ResponseEntity<>(body,HttpStatus.BAD_REQUEST);
