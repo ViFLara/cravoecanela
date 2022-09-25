@@ -5,7 +5,7 @@
 </h1>
 
 <h4 align="center"> 
-	:heavy_check_mark: Atividade da primeira semana da turma Hacker da Gama Experience :heavy_check_mark:
+	:heavy_check_mark: Consultoria Fictícia Cravo&Canela Gama Academy :heavy_check_mark:
 </h4>
 
 ## Sobre o Projeto 💻
