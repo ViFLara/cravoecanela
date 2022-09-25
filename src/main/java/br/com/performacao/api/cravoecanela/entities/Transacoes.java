@@ -33,4 +33,5 @@ public class Transacoes {
             joinColumns = { @JoinColumn(name = "transacao_id") },
             inverseJoinColumns = { @JoinColumn(name = "servico_id") })
     private List<Servicos> servicos;
+    private String status;
 }

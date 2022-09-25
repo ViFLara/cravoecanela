@@ -37,8 +37,8 @@ public class TransacoesController {
         return transacoesService.findAll(pageable);
     }
 
-    @PutMapping
+    @PatchMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void update(@RequestBody TransacoesDTO transacoesDTO) throws ChangeSetPersister.NotFoundException { transacoesService.update(transacoesDTO); }
+    public void update(String status, Long id) throws ChangeSetPersister.NotFoundException { transacoesService.update(status, id); }
 
 }

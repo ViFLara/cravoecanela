@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TransacoesService {
@@ -50,10 +51,10 @@ public class TransacoesService {
         return transacoes;
     }
 
-    public void update(TransacoesDTO transacoesDTO) throws ChangeSetPersister.NotFoundException {
-        Transacoes transacoes = transacoesMapper.toTransacoesEntity(transacoesDTO);
-        verifyIfExists(transacoes.getId());
-        transacoesRepository.save(transacoes);
+    public void update(String status, Long id) throws ChangeSetPersister.NotFoundException {
+        Optional<Transacoes> transacoes = transacoesRepository.findById(id);
+        transacoes.orElseThrow().setStatus(status);
+        transacoesRepository.save(transacoes.get());
     }
 
     private void verifyIfExists(Long id) throws ChangeSetPersister.NotFoundException {
@@ -61,3 +62,4 @@ public class TransacoesService {
                 .orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 }
+
