@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.context.request.WebRequest;
 
 import java.time.LocalDate;
@@ -59,13 +60,22 @@ public class ControllerAdvisor {
             DataIntegrityViolationException ex, WebRequest request){
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("errorCode","NOT FOUND");
-        body.put("errorMessage", ex.getLocalizedMessage());
+        body.put("errorCode","BAD_REQUEST");
+        body.put("errorMessage", ex.getCause().getCause().toString());
         body.put("timestamp", LocalDateTime.now());
 
         return new ResponseEntity<>(body,HttpStatus.BAD_REQUEST);
 
     }
+
+    /*@ExceptionHandler(Confli.BadRequest.class)
+    public class ClienteAlreadyRegisteredException extends Exception{
+        private static final long serialVersionUID = 1L;
+
+        public ClienteAlreadyRegisteredException(String clienteCPF) {
+            super(String.format("liente com o c pf %s já foi registrado no sistema.", clienteCPF));
+        }
+    }*/
 
 
 

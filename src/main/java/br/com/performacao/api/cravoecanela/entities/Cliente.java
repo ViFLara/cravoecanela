@@ -14,12 +14,13 @@ import java.util.Objects;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "cliente")
+@Table(name = "cliente", uniqueConstraints={@UniqueConstraint(columnNames={"cpf"})})
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String cpf;
     private String email;

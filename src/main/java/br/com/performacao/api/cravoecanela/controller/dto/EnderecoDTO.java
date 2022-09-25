@@ -1,6 +1,7 @@
 package br.com.performacao.api.cravoecanela.controller.dto;
 
 import br.com.performacao.api.cravoecanela.entities.Cliente;
+import br.com.performacao.api.cravoecanela.enums.UF;
 import lombok.*;
 
 import javax.persistence.OneToOne;
@@ -19,7 +20,7 @@ public class EnderecoDTO {
     private String cep;
     private String bairro;
     private String cidade;
-    private String estado;
+    private UF estado;
     private String pais;
     @OneToOne(mappedBy = "endereco")
     private Cliente cliente;
