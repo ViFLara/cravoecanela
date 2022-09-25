@@ -1,4 +1,4 @@
-package br.com.performacao.api.cravoecanela.controller;
+package br.com.performacao.api.cravoecanela.controller.dto.exceptions;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister;
