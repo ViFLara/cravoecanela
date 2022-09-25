@@ -2,7 +2,6 @@ package br.com.performacao.api.cravoecanela.services;
 
 import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.TransacoesDTO;
-import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.entities.Transacoes;
 import br.com.performacao.api.cravoecanela.mapper.TransacoesMapper;
 import br.com.performacao.api.cravoecanela.repositories.TransacoesRepository;
