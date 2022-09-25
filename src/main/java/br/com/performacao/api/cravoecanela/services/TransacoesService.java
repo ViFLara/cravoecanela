@@ -2,6 +2,7 @@ package br.com.performacao.api.cravoecanela.services;
 
 import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.TransacoesDTO;
+import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.entities.Transacoes;
 import br.com.performacao.api.cravoecanela.mapper.TransacoesMapper;
 import br.com.performacao.api.cravoecanela.repositories.TransacoesRepository;
@@ -33,7 +34,7 @@ public class TransacoesService {
     }
 
     @Transactional(readOnly = true)
-    public PageDTO<TransacoesDTO> findAll(Pageable pageable) {
+    public PageDTO<TransacoesDTO> findAll(Pageable pageable, Long clienteId) {
 
         Page<Transacoes> result = transacoesRepository.findAll(pageable);
 

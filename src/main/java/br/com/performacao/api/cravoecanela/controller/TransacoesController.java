@@ -33,8 +33,8 @@ public class TransacoesController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public PageDTO<TransacoesDTO> findAll(Pageable pageable) {
-        return transacoesService.findAll(pageable);
+    public PageDTO<TransacoesDTO> findAll(Pageable pageable, Long clienteId) {
+        return transacoesService.findAll(pageable, clienteId);
     }
 
     @PatchMapping
