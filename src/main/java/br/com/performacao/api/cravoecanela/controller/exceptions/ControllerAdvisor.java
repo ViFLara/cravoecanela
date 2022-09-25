@@ -1,4 +1,4 @@
-package br.com.performacao.api.cravoecanela.controller.dto.exceptions;
+package br.com.performacao.api.cravoecanela.controller.exceptions;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -66,7 +66,5 @@ public class ControllerAdvisor {
         return new ResponseEntity<>(body,HttpStatus.BAD_REQUEST);
 
     }
-
-
 
 }
