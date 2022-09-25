@@ -32,7 +32,7 @@ public class ClienteControllerTest {
     @Test
     public void greetingShouldReturnDefaultMessage() {
 
-        when(mockRepository.findAll(any(Pageable.class))).thenReturn(gerarListaPaginadaCliente());
+        //when(mockRepository.findAll(any(Pageable.class))).thenReturn(gerarListaPaginadaCliente());
 
         assertThat(this.restTemplate
                 .getForObject("http://localhost:" + port + "/clientes",

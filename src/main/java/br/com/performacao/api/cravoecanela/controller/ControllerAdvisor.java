@@ -1,5 +1,6 @@
 package br.com.performacao.api.cravoecanela.controller;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -51,6 +52,19 @@ public class ControllerAdvisor {
         body.put("timestamp", LocalDate.now());
 
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    protected ResponseEntity<Object> handleDataIntegrityViolationException(
+            DataIntegrityViolationException ex, WebRequest request){
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("errorCode","NOT FOUND");
+        body.put("errorMessage", ex.getLocalizedMessage());
+        body.put("timestamp", LocalDateTime.now());
+
+        return new ResponseEntity<>(body,HttpStatus.BAD_REQUEST);
+
     }
 
 

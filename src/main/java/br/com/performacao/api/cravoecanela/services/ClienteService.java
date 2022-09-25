@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,6 +27,10 @@ public class ClienteService {
     public ClienteDTO createCliente(Cliente cliente) {
         Cliente savedCliente = clienteRepository.save(cliente);
         return clienteMapper.toClienteDTO(savedCliente);
+    }
+
+    public void createClienteList(List<ClienteDTO> clientes) {
+        clienteRepository.saveAll(clienteMapper.toClienteList(clientes));
     }
 
     @Transactional(readOnly = true)

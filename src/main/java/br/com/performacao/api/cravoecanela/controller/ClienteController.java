@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -22,6 +23,12 @@ public class ClienteController {
     @ResponseStatus(HttpStatus.CREATED)
     public ClienteDTO createCliente(@RequestBody Cliente cliente)  {
         return service.createCliente(cliente);
+    }
+
+    @PostMapping("/list")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createClienteList(@RequestBody List<ClienteDTO> clientes)  {
+        service.createClienteList(clientes);
     }
 
     @GetMapping(value = "/{id}")
