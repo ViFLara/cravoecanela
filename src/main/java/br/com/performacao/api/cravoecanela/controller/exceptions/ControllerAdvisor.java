@@ -1,4 +1,4 @@
-package br.com.performacao.api.cravoecanela.controller;
+package br.com.performacao.api.cravoecanela.controller.exceptions;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -67,16 +67,5 @@ public class ControllerAdvisor {
         return new ResponseEntity<>(body,HttpStatus.BAD_REQUEST);
 
     }
-
-    /*@ExceptionHandler(Confli.BadRequest.class)
-    public class ClienteAlreadyRegisteredException extends Exception{
-        private static final long serialVersionUID = 1L;
-
-        public ClienteAlreadyRegisteredException(String clienteCPF) {
-            super(String.format("liente com o c pf %s já foi registrado no sistema.", clienteCPF));
-        }
-    }*/
-
-
 
 }
