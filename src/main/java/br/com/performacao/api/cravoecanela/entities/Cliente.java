@@ -14,7 +14,7 @@ import java.util.Objects;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "cliente", uniqueConstraints={@UniqueConstraint(columnNames={"cpf"})})
+@Table(name = "cliente")
 public class Cliente {
 
     @Id
@@ -22,6 +22,7 @@ public class Cliente {
     private Long id;
 
     private String nome;
+    @Column(nullable = false, unique = true)
     private String cpf;
     private String email;
     private String telefone;

@@ -1,5 +1,6 @@
 package br.com.performacao.api.cravoecanela.mapper;
 
+import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.EnderecoDTO;
 import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.entities.Endereco;
@@ -11,8 +12,8 @@ import java.util.List;
 public interface EnderecoMapper {
 
     EnderecoDTO toEnderecoDTO (Endereco endereco);
-    Cliente toEnderecoEntity (EnderecoDTO enderecoDTO);
-
+    Endereco toEnderecoEntity (EnderecoDTO enderecoDTO);
     List<EnderecoDTO> toEnderecoDTOList (List<Endereco> endereco);
+    List<Endereco> toEnderecoList (List<EnderecoDTO> enderecoDTOS);
 
 }

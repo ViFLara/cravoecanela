@@ -21,7 +21,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ClienteDTO createCliente(@RequestBody Cliente cliente)  {
+    public ClienteDTO createCliente(@RequestBody ClienteDTO cliente)  {
         return service.createCliente(cliente);
     }
 

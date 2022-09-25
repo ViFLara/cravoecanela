@@ -16,10 +16,11 @@ import static br.com.performacao.api.cravoecanela.enums.Genero.*;
 public interface ClienteMapper {
 
     @Mapping(expression = "java(null == ClienteDTO.transformGeneroToEnum(cliente.getGenero()) ? null : ClienteDTO.transformGeneroToEnum(cliente.getGenero()))", target = "genero")
-    @Mapping(expression = "java(null == ClienteDTO.transformECToEnum(cliente.getGenero()) ? null : ClienteDTO.transformECToEnum(cliente.getGenero()))", target = "estadoCivil")
+    @Mapping(expression = "java(null == ClienteDTO.transformECToEnum(cliente.getEstadoCivil()) ? null : ClienteDTO.transformECToEnum(cliente.getEstadoCivil()))", target = "estadoCivil")
     ClienteDTO toClienteDTO (Cliente cliente);
     @Mapping(expression = "java(null == clienteDTO.getGenero().getValue() ? null : clienteDTO.getGenero().getValue())", target = "genero")
     @Mapping(expression = "java(null == clienteDTO.getEstadoCivil().getValue() ? null : clienteDTO.getEstadoCivil().getValue())", target = "estadoCivil")
+    @Mapping(target = "Endereco.cliente",ignore = true)
     Cliente toClienteEntity (ClienteDTO clienteDTO);
 
     List<ClienteDTO> toClienteDTOList (List<Cliente> cliente);
