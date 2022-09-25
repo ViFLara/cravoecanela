@@ -1,8 +1,6 @@
 package br.com.performacao.api.cravoecanela.mapper;
 
-import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.EnderecoDTO;
-import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.entities.Endereco;
 import org.mapstruct.Mapper;
 
