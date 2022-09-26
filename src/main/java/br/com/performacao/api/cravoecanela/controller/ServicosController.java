@@ -1,6 +1,5 @@
 package br.com.performacao.api.cravoecanela.controller;
 
-import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.ServicosDTO;
 import br.com.performacao.api.cravoecanela.services.ServicosService;

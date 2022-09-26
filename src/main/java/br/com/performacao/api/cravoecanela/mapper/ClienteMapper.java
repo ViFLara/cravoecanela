@@ -2,15 +2,10 @@ package br.com.performacao.api.cravoecanela.mapper;
 
 import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
 import br.com.performacao.api.cravoecanela.entities.Cliente;
-import br.com.performacao.api.cravoecanela.enums.Genero;
-import org.mapstruct.MapMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.ValueMapping;
 
 import java.util.List;
-
-import static br.com.performacao.api.cravoecanela.enums.Genero.*;
 
 @Mapper(componentModel = "spring")
 public interface ClienteMapper {
