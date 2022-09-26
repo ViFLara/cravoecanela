@@ -42,14 +42,14 @@ public class TransacoesController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation("Find all transações")
+    @ApiOperation("Find all Transações")
     public PageDTO<TransacoesDTO> findAll(Pageable pageable, Long clienteId) {
         return transacoesService.findAll(pageable, clienteId);
     }
 
     @PatchMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @ApiOperation("Update transações")
+    @ApiOperation("Update Transações")
     public void update(String status, Long id) throws ChangeSetPersister.NotFoundException { transacoesService.update(status, id); }
 
 }

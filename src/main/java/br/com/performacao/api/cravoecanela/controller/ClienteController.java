@@ -43,7 +43,6 @@ public class ClienteController {
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation("Find by id cliente")
     public Optional<ClienteDTO> findById(@PathVariable Long id) {
         return service.findById(id);
     }
@@ -62,7 +61,7 @@ public class ClienteController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation("Delete by id cliente")
+    @ApiOperation("Delete by id Cliente")
     public void deleteById(@PathVariable Long id) throws ChangeSetPersister.NotFoundException {
         service.deleteById(id);
     }

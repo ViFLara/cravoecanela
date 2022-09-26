@@ -23,7 +23,7 @@ public class ServicosController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation("Find all serviços")
+    @ApiOperation("Find all Serviços")
     public PageDTO<ServicosDTO> findAll(Pageable pageable) {
         return servicosService.findAll(pageable);
     }
