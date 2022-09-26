@@ -1,10 +1,13 @@
 package br.com.performacao.api.cravoecanela.controller.dto;
 
-import br.com.performacao.api.cravoecanela.entities.Endereco;
 import br.com.performacao.api.cravoecanela.enums.EstadoCivil;
 import br.com.performacao.api.cravoecanela.enums.Genero;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;

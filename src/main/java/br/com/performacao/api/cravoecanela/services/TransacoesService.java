@@ -8,12 +8,14 @@ import br.com.performacao.api.cravoecanela.repositories.TransacoesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class TransacoesService {
@@ -35,18 +37,23 @@ public class TransacoesService {
     @Transactional(readOnly = true)
     public PageDTO<TransacoesDTO> findAll(Pageable pageable, Long clienteId) {
 
-        Page<Transacoes> result = transacoesRepository.findAll(pageable);
+        List<Transacoes> result = transacoesRepository.findAll()
+                .stream()
+                .filter(transacoes -> transacoes.getCliente().getId() == clienteId)
+                .collect(Collectors.toList());
 
-        PageDTO<TransacoesDTO> transacoes = new PageDTO<>(transacoesMapper.toTransacoesDTOList(result.getContent()));
+        Page<Transacoes> resultPage = new PageImpl<>(result,pageable, result.size());
 
-        transacoes.setFirst(result.isFirst());
-        transacoes.setLast(result.isLast());
-        transacoes.setNumber(result.getNumber());
-        transacoes.setNumberOfElements(result.getNumberOfElements());
-        transacoes.setSize(result.getSize());
-        transacoes.setTotalElements(result.getTotalElements());
-        transacoes.setTotalPages(result.getTotalPages());
-        transacoes.setSort(result.getSort());
+        PageDTO<TransacoesDTO> transacoes = new PageDTO<>(transacoesMapper.toTransacoesDTOList(result));
+
+        transacoes.setFirst(resultPage.isFirst());
+        transacoes.setLast(resultPage.isLast());
+        transacoes.setNumber(resultPage.getNumber());
+        transacoes.setNumberOfElements(resultPage.getNumberOfElements());
+        transacoes.setSize(resultPage.getSize());
+        transacoes.setTotalElements(resultPage.getTotalElements());
+        transacoes.setTotalPages(resultPage.getTotalPages());
+        transacoes.setSort(resultPage.getSort());
 
         return transacoes;
     }
