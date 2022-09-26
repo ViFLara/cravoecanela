@@ -49,14 +49,14 @@ public class ClienteController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation("Find all clientes")
+    @ApiOperation("Find all Clientes")
     public PageDTO<ClienteDTO> findAll(Pageable pageable) {
         return service.findAll(pageable);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @ApiOperation("Update cliente")
+    @ApiOperation("Update Cliente")
     public void update(@RequestBody ClienteDTO cliente) throws ChangeSetPersister.NotFoundException { service.update(cliente); }
 
     @DeleteMapping("/{id}")
