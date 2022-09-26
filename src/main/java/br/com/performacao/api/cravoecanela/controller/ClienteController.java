@@ -2,7 +2,6 @@ package br.com.performacao.api.cravoecanela.controller;
 
 import br.com.performacao.api.cravoecanela.controller.dto.ClienteDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
-import br.com.performacao.api.cravoecanela.entities.Cliente;
 import br.com.performacao.api.cravoecanela.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;

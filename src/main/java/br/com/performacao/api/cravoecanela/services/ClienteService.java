@@ -70,7 +70,6 @@ public class ClienteService {
     }
 
     private void verifyIfExists(Long id) throws ChangeSetPersister.NotFoundException {
-        clienteRepository.findById(id)
-                .orElseThrow(ChangeSetPersister.NotFoundException::new);
+        clienteRepository.findById(id).orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 }
