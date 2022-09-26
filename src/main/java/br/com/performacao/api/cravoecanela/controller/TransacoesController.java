@@ -4,6 +4,8 @@ import br.com.performacao.api.cravoecanela.controller.dto.PageDTO;
 import br.com.performacao.api.cravoecanela.controller.dto.TransacoesDTO;
 import br.com.performacao.api.cravoecanela.entities.Transacoes;
 import br.com.performacao.api.cravoecanela.services.TransacoesService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/transacoes")
+@Api(tags = "Transações Controller")
 public class TransacoesController {
 
     @Autowired
@@ -39,12 +42,14 @@ public class TransacoesController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
+    @ApiOperation("Find all transações")
     public PageDTO<TransacoesDTO> findAll(Pageable pageable, Long clienteId) {
         return transacoesService.findAll(pageable, clienteId);
     }
 
     @PatchMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
+    @ApiOperation("Update transações")
     public void update(String status, Long id) throws ChangeSetPersister.NotFoundException { transacoesService.update(status, id); }
 
 }
