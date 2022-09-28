@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "99af7694-358d-40c7-8037-248175e8b5e7",
+		"name": "CravoECanela",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17162547"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Cadastrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\t\t\n\t\t\"nome\": \"Fernando Moreira\",\n\t\t\"cpf\": \"283.712.910-00\",\n\t\t\"dataNascimento\": \"1996-12-09\",\n\t\t\"genero\": \"MASTRANS\",\n\t\t\"estadoCivil\": \"OUTROS\",\n\t\t\"profissao\": \"Engenheiro Civil\",\n\t\t\"email\": \"fernando.moreira@gmail.com.br\",\n\t\t\"telefone\": \"(13) 98652-4837\",\n\t\t\"endereco\": {\t\n\t\t\t\"cep\": \"04726-010\",\n\t\t\t\"logradouro\": \"Rua Visconde de Taunay\",\n\t\t\t\"numero\": \"876\",\t\t\n\t\t\t\"complemento\": \"Apto. 25A\",\n\t\t\t\"bairro\": \"Vila Cruzeiro\",\n\t\t\t\"estado\": \"SP\",\n\t\t\t\"pais\": \"Brasil\",\n\t\t\t\"tipo\": \"Comercial\", \n\t\t\t\"cidade\":\"São Paulo\"\n\t\t}\t\t\t\n\t}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar lista de clientes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\t\t\t\t\n\t{\t\t\t\t\n\t\t\"nome\": \"Patrícia Ferrão\",\n\t\t\"cpf\": \"624.891.470-21\",\n\t\t\"dataNascimento\": \"1985-12-09\",\n\t\t\"genero\": \"FEMTRANS\",\n\t\t\"estadoCivil\": \"UNIAOESTAVEL\",\n\t\t\"profissao\": \"Analista de Sistemas\",\n\t\t\"email\": \"patricia.ferrao@zoomfoccus.com.br\",\n\t\t\"telefone\": \"(13) 96521-4837\",\n\t\t\"endereco\": {\t\n\t\t\t\"cep\": \"83303-040\",\n\t\t\t\"logradouro\": \"Rua Porto Alegre\",\n\t\t\t\"numero\": \"876\",\t\t\n\t\t\t\"complemento\": \"Apto. 25A\",\n\t\t\t\"bairro\": \"Vila Vicente Macedo\",\n\t\t\t\"estado\": \"PR\",\n\t\t\t\"pais\": \"Brasil\",\n\t\t\t\"tipo\": \"Comercial\", \n\t\t\t\"cidade\":\"Curitiba\"\n\t\t}\t\t\t\n\t},\t\t\t\t\n\t{\t\t\t\t\n\t\t\"nome\": \"Pietro Muie\",\n\t\t\"cpf\": \"601.850.010-84\",\n\t\t\"dataNascimento\": \"1973-07-02\",\n\t\t\"genero\": \"MASCIS\",\n\t\t\"estadoCivil\": \"VIUVO\",\n\t\t\"profissao\": \"Outras\",\n\t\t\"email\": \"pietro-muie@citadini.imb.br\",\n\t\t\"telefone\": \"(87) 91565-4245\",\n\t\t\"endereco\": {\t\n\t\t\t\"cep\": \"56328-550\",\n\t\t\t\"logradouro\": \"Rua do Abará\",\n\t\t\t\"complemento\": \"casa\",\n\t\t\t\"numero\": \"407\",\t\t\n\t\t\t\"bairro\": \"Areia Branca\",\n\t\t\t\"estado\": \"PE\",\n\t\t\t\"pais\": \"Brasil\",\n\t\t\t\"tipo\": \"Residencial\", \n\t\t\t\"cidade\":\"Recife\"\n\t\t}\t\t\t\n    }\t\t\n]\t\t\t\t"
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cadastro",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\n        \"id\":52,\t\t\n\t\t\"nome\": \"Fernando Moreira\",\n\t\t\"cpf\": \"283.712.910-00\",\n\t\t\"dataNascimento\": \"1996-12-09\",\n\t\t\"genero\": \"MASTRANS\",\n\t\t\"estadoCivil\": \"SOLTEIRO\",\n\t\t\"profissao\": \"Engenheiro Civil\",\n\t\t\"email\": \"fernando.moreira@gmail.com.br\",\n\t\t\"telefone\": \"(13) 92584-4837\",\n\t\t\"endereco\": {\t\n\t\t\t\"cep\": \"04726-010\",\n\t\t\t\"logradouro\": \"Rua Visconde de Taunay\",\n\t\t\t\"numero\": \"876\",\t\t\n\t\t\t\"complemento\": \"Apto. 25A\",\n\t\t\t\"bairro\": \"Vila Cruzeiro\",\n\t\t\t\"estado\": \"SP\",\n\t\t\t\"pais\": \"Brasil\",\n\t\t\t\"tipo\": \"Comercial\", \n\t\t\t\"cidade\":\"São Paulo\"\n\t\t}\t\t\t\n\t}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter cliente por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar cliente",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
