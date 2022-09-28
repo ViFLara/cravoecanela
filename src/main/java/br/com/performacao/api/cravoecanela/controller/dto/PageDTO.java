@@ -32,10 +32,6 @@ public class PageDTO<T> {
         this.content = Collections.emptyList();
     }
 
-    public boolean hasContent() {
-        return content != null && !content.isEmpty();
-    }
-
     public boolean isFirst() {
         return first;
     }
@@ -43,15 +39,6 @@ public class PageDTO<T> {
     public boolean isLast() {
         return last;
     }
-
-    public <R> PageDTO<R> mapEach(Function<T, R> func){
-
-        if(this.content != null && !this.content.isEmpty())
-            return null;//new PageDTO<>(this.content.stream().map(func).collect(Collectors.toList()), this);
-
-        return new PageDTO<>();
-    }
-
     @JsonIgnore
     public boolean isEmpty() {
         return this.content == null || this.content.isEmpty();

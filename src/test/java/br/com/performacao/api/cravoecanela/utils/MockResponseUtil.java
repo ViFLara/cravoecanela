@@ -20,31 +20,7 @@ public class MockResponseUtil {
 
     public static Page<Cliente> gerarListaPaginadaCliente() {
 
-        Endereco endereco = Endereco.builder()
-                .id(1L)
-                .tipo("Residencial")
-                .cep("01010-010")
-                .logradouro("Rua de teste")
-                .numero(1)
-                .complemento("Apto 1A")
-                .bairro("Vila de teste")
-                .cidade("Cidade de teste")
-                .estado("SP")
-                .pais("Teste")
-                .build();
-
-        Cliente cliente = Cliente.builder()
-                .id(1L)
-                .cpf("123.456.789-10")
-                .nome("Teste 1")
-                .dataNascimento(Date.valueOf("2010-01-01"))
-                .genero("Mulher Cisgênero")
-                .email("teste@teste.com")
-                .telefone("(11) 91111-1111")
-                .profissao("Tester")
-                .estadoCivil("Solteiro(a)")
-                .endereco(endereco)
-                .build();
+        Cliente cliente = gerarCliente();
 
         List<Cliente> clienteList = new ArrayList<>();
         clienteList.add(cliente);
@@ -82,32 +58,18 @@ public class MockResponseUtil {
         return cliente;
     }
 
+    public static List<ClienteDTO> gerarListClienteDTORequest() {
+
+        List<ClienteDTO> listaCliente = new ArrayList<>();
+        listaCliente.add(gerarClienteDTOResponse());
+
+        return listaCliente;
+    }
+
     public static ClienteDTO gerarClienteDTOResponse() {
 
-        EnderecoDTO endereco = EnderecoDTO.builder()
-                .tipo("Residencial")
-                .cep("01010-010")
-                .logradouro("Rua de teste")
-                .numero(1)
-                .complemento("Apto 1A")
-                .bairro("Vila de teste")
-                .cidade("Cidade de teste")
-                .estado(SP)
-                .pais("Teste")
-                .build();
-
-        ClienteDTO cliente = ClienteDTO.builder()
-                .id(1L)
-                .cpf("123.456.789-10")
-                .nome("Teste 1")
-                .dataNascimento(Date.valueOf("2010-01-01"))
-                .genero(Genero.FEMCIS)
-                .email("teste@teste.com")
-                .telefone("(11) 91111-1111")
-                .profissao("Tester")
-                .estadoCivil(EstadoCivil.SOLTEIRO)
-                .endereco(endereco)
-                .build();
+        ClienteDTO cliente = gerarClienteDTORequest();
+        cliente.setId(1L);
 
         return cliente;
     }

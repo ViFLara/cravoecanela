@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
 
 import static br.com.performacao.api.cravoecanela.utils.MockResponseUtil.*;
@@ -44,7 +45,7 @@ public class ClienteControllerTest {
         assertThat(this.restTemplate
                 .getForObject("http://localhost:" + port + "/clientes",
                 String.class))
-                .isGreaterThanOrEqualTo(gerarStringJsonResultadoLista());
+                .hasSameSizeAs(gerarStringJsonResultadoLista());
     }
 
     @Test
@@ -57,6 +58,17 @@ public class ClienteControllerTest {
                         gerarClienteDTORequest(),
                         ClienteDTO.class))
                 .hasNoNullFieldsOrProperties()
+                .returns(Boolean.TRUE,clienteDTOResponseEntity -> clienteDTOResponseEntity.getStatusCode().is2xxSuccessful());
+    }
+
+    @Test
+    public void testeCadastrarListaClienteComSucesso() {
+
+
+        assertThat(this.restTemplate
+                .postForEntity("http://localhost:" + port + "/clientes/list",
+                        gerarListClienteDTORequest(),
+                        Void.class))
                 .returns(Boolean.TRUE,clienteDTOResponseEntity -> clienteDTOResponseEntity.getStatusCode().is2xxSuccessful());
     }
 
