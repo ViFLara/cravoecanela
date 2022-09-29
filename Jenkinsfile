@@ -6,8 +6,7 @@ pipeline {
     }
   }
   environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws_secret_id')
-        AWS_SECRET_ACCESS_KEY = credentials('aws_secret')
+        EC2_ACCESS     = credentials('	performacao_key_pair')
   }
   stages {
     stage('Build') {
