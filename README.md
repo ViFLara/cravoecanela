@@ -56,22 +56,22 @@
   ## 📝 Projeto
   
   Este projeto é divido em dois repositórios:
- 1. Backend - este repositorio <a href="https://github.com/ViFLara/cravoecanela_backend">cravoecanela_backend</a>
-        
- 2. Frontend - <a href="https://github.com/ViFLara/cravoecanela_backend">cravoecanela_frontend</a>
-  O Frontend foi divido em 4 páginas:
+ 1. Frontend - <a href="https://github.com/ViFLara/cravoecanela_backend">cravoecanela_frontend</a>       
+ 2.  Backend - <a href="https://github.com/ViFLara/cravoecanela_backend">cravoecanela_backend</a>
+  Os endpoints do Backend podem ser vistos pelo Swagger:
   
-   :heavy_check_mark: Login de usuários:<br>
-        permite o usuario se logar na plataforma através da validação de login e senha
+  link : http://ec2-174-129-49-15.compute-1.amazonaws.com:8081/v2/api-docs 
+  
+  ## Clientes:
+  
+  ![image](https://user-images.githubusercontent.com/46038257/193161173-e8ed1cf0-e91b-41f6-b313-bb5253bee634.png)
+  
+  ## Serviços:
+  
+  ![image](https://user-images.githubusercontent.com/46038257/193161858-e8710ada-f81c-41ab-a5ac-556f9803d75d.png)
+  
+   ## Transações:
 
-   :heavy_check_mark: Cadastro de clientes:<br> 
-        permite registrar os dados pessoais do cliente
-
-   :heavy_check_mark: Listagem de clientes:<br> 
-        permite listar todos os clientes, alterar os dados cadastrais, deletar o cadastro do cliente e direcionar para a lista transaçoes daquele cliente
-      
-   :heavy_check_mark: Listar Histórico de transações por cliente:<br>
-        permite listar todas as transações contratadas pelo cliente
 
 
  ### Modelagem para criação do banco de dados
@@ -79,7 +79,7 @@
 # <h1 align="center"> ![tabela1](https://user-images.githubusercontent.com/82177551/193124764-73615a41-88a0-4eea-bd9a-69d762643c1b.png)</h1>
 # <h1 align="center">![tabela](https://user-images.githubusercontent.com/82177551/193124771-8fc3009d-b000-492d-8fb8-39291b150e53.png)</h1>
 
- ### Pré-requisitos para o Frontend
+ ### Pré-requisitos para o Backend
   Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
   [Git](https://git-scm.com) e um ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/) 
  ---
