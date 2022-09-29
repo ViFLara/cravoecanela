@@ -24,7 +24,7 @@ pipeline {
 
     stage('Deliver') {
       steps {
-        sh 'scp -v -o StrictHostKeyChecking=no  -i ${EC2_ACCESS} target/*.jar ec2-user@174.129.49.15:/home/RELEASE/$BUILD_NUMBER'
+        sh 'scp -v -o StrictHostKeyChecking=no  -i ${EC2_ACCESS} -r target/*.jar ec2-user@174.129.49.15:/home/RELEASE/$BUILD_NUMBER'
         sh "sshpass -p password ssh -o StrictHostKeyChecking=no -i ${EC2_ACCESS} ec2-user@174.129.49.15 '/home/start.sh $BUILD_NUMBER'"
         }
     }
