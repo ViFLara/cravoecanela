@@ -87,11 +87,14 @@
 ## 🛠 Tecnologias
   
   As seguintes ferramentas foram usadas na construção do projeto:
-  #### **Backend**  
+  #### **Backend**
   
-<img src="https://img.shields.io/badge/Java-744e3b?style=for-the-badge&logo=java&logoColor=white"/>
-<img src="https://img.shields.io/badge/apache_maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
+<img src="https://www.vectorlogo.zone/logos/java/java-vertical.svg"/>
+<img src="https://img.shields.io/badge/Spring Boot-97d96b?style=for-the-badge&logo=Spring Boot&logoColor=white"/>
+<img src="https://img.shields.io/badge/apache_maven-AC2246?style=for-the-badge&logo=apachemaven&logoColor=white"/>
 <img src="https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/>
+<img src="https://img.shields.io/badge/AWS-ed7f40?style=for-the-badge&logo=amazon&logoColor=white"/>
+<img src="https://img.shields.io/badge/Jenkins-fbca75?style=for-the-badge&logo=jenkins&logoColor=white"/>
 <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white"/>
     
 ---  
@@ -99,7 +102,7 @@
 
 Backend
 
-| [<img src="https://avatars.githubusercontent.com/u/89219239?v=4" width=115><br><sub>Priscila Tuppy</sub>](https://github.com/PriscilaTuppy) |  [<img src="https://avatars.githubusercontent.com/u/46038257?v=4" width=115><br><sub>Viviane Ferreira Lara</sub>](https://github.com/ViFLara)|
+| [<img src="https://avatars.githubusercontent.com/u/46038257?v=4" width=115><br><sub>Viviane Ferreira Lara</sub>](https://github.com/ViFLara)| [<img src="https://avatars.githubusercontent.com/u/89219239?v=4" width=115><br><sub>Priscila Tuppy</sub>](https://github.com/PriscilaTuppy) |  
 | :---: | :---: |
   
 Frontend
