@@ -175,6 +175,118 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Transações",
+			"item": [
+				{
+					"name": "Criar Transação",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clienteId\": 1,\n  \"data\": \"2022-09-29\",\n  \"horasTotais\": 15.5,\n  \"valorTotal\": 100,\n  \"servicosIds\":[\n      1,2\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/transacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar transações cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/transacoes?clienteId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transacoes"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/transacoes?id=1&status=CANCELED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transacoes"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "CANCELED"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicos",
+			"item": [
+				{
+					"name": "Listar Servicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/servicos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

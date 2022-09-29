@@ -21,9 +21,9 @@ public interface TransacoesMapper {
     @Mapping(source = "transacoesDTO.horasTotais" , target = "horas_totais")
     @Mapping(source = "transacoesDTO.valorTotal" , target = "valor_total")
     @Mapping(source = "transacoesDTO.status" , target = "status")
+    @Mapping(source = "transacoesDTO.id", target = "id")
     @Mapping(source = "cliente", target = "cliente")
     @Mapping(source = "servicos", target = "servicos")
-    @Mapping(target = "id",ignore = true)
     Transacoes toTransacoesEntity (TransacoesDTO transacoesDTO, Cliente cliente, List<Servicos> servicos);
 
     List<TransacoesDTO> toTransacoesDTOList (List<Transacoes> transacoes);

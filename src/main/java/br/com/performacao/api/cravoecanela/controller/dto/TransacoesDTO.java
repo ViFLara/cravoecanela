@@ -20,6 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 public class TransacoesDTO {
 
+    private Long id;
     private Long clienteId;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date data;
