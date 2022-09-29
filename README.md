@@ -2,13 +2,13 @@
       <a href="https://github.com/ViFLara/cravoecanela_backend/commits/dev">
         <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-%20September%202022-yellow">
       </a>
+      </a>
+      <a href="https://github.com/ViFLara">
+      <img alt="Feito por Viviane Ferreira Lara" src="https://img.shields.io/badge/feito%20por-ViFLara-yellow">
+      </a>
       <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellowgreen"/>
       <a href="https://github.com/PriscilaTuppy">
-        <img alt="Feito por Priscila Tuppy" src="https://img.shields.io/badge/feito%20por-PriscilaTuppy-yellow">
-      </a>
-       <a href="https://github.com/ViFLara">
-        <img alt="Feito por Viviane Ferreira Lara" src="https://img.shields.io/badge/feito%20por-ViFLara-yellow">
-      </a>
+        <img alt="Feito por Priscila Tuppy" src="https://img.shields.io/badge/feito%20por-PriscilaTuppy-yellow">   
       <img alt="GitHub last commit" src="https://img.shields.io/badge/release%20date-%20September%202022-yellowgreen">
       <img alt="GitHub last commit" src="https://img.shields.io/badge/project%20-%20backend-yellowgreen">
 </p>
@@ -89,7 +89,7 @@
   As seguintes ferramentas foram usadas na construção do projeto:
   #### **Backend**
   
-<img src="https://www.vectorlogo.zone/logos/java/java-vertical.svg"/>
+<img src="https://img.shields.io/badge/Java 11-fbca75?style=for-the-badge&logo=java&logoColor=white"/>
 <img src="https://img.shields.io/badge/Spring Boot-97d96b?style=for-the-badge&logo=Spring Boot&logoColor=white"/>
 <img src="https://img.shields.io/badge/apache_maven-AC2246?style=for-the-badge&logo=apachemaven&logoColor=white"/>
 <img src="https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/>
