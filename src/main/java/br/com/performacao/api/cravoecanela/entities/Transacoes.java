@@ -33,19 +33,25 @@ public class Transacoes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transacao_id")
     private Long id;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date data;
-    private BigDecimal valor_total;
+
     private BigDecimal horas_totais;
+
+    private BigDecimal valor_total;
+
     @ManyToOne(optional = false)
     @JoinColumn(name="cliente_id")
     private Cliente cliente;
+
+    private String status;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "transacoes_servicos",
             joinColumns = { @JoinColumn(name = "transacao_id") },
             inverseJoinColumns = { @JoinColumn(name = "servico_id") })
     private List<Servicos> servicos;
-    private String status;
+
 }

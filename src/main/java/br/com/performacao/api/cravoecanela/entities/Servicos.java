@@ -25,7 +25,6 @@ public class Servicos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "servico_id")
     private Long id;
     private String descricao;
     private BigDecimal preco;

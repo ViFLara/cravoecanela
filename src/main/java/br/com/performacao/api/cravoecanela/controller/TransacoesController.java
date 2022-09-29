@@ -30,7 +30,7 @@ public class TransacoesController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public TransacoesDTO createTransacao(@RequestBody Transacoes transacao)  {
+    public TransacoesDTO createTransacao(@RequestBody TransacoesDTO transacao)  {
         return transacoesService.createTransacao(transacao);
     }
 
