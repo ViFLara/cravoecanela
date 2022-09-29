@@ -4,10 +4,9 @@ pipeline {
       image 'maven:3-alpine'
       args '-v /root/.m2:/root/.m2'
     }
-    environment {
+  }
+  environment {
         EC2_ACCESS     = credentials('	performacao_key_pair')
-    }
-
   }
   stages {
     stage('Build') {
