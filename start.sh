@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -x
 mvn jar:jar install:install help:evaluate -Dexpression=project.name
@@ -13,4 +13,6 @@ VERSION=`mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"`
 set +x
 
 set -x
-java -jar target/${NAME}-${VERSION}.jar
+
+nohup java -jar home//RELEASE/$BUILD_NUMBER/${NAME}-${VERSION}.jar > /home/log.txt 2>&1 &
+echo $! > /home/pid.file
