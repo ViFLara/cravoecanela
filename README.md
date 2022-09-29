@@ -1,4 +1,4 @@
-# cravoecanela_backend
+# Cravo&Canela_backend
 
 <h1 align="center">
     <img alt="GamaAcademy" title="#GamaAcademy" src="./logo.png" width="250px" />
