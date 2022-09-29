@@ -18,8 +18,6 @@ pipeline {
                success {
                     echo 'Now Archiving...'
                     archiveArtifacts artifacts: 'target/*.jar'
-                     sh 'aws configure set region us-east-1'
-                    sh 'aws s3 cp ./target/cravoecanela-0.0.1-SNAPSHOT.jar s3://s3performacao/cravoecanela.jar'
                    }
       }
     }
