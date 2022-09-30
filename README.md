@@ -62,16 +62,30 @@
   
   link : http://ec2-174-129-49-15.compute-1.amazonaws.com:8081/v2/api-docs 
   
-  ## Clientes:
+  ## Endpoints:
+  ### Clientes:
   
-  ![image](https://user-images.githubusercontent.com/46038257/193161173-e8ed1cf0-e91b-41f6-b313-bb5253bee634.png)
+  :heavy_check_mark:  https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (obter cliente especifico)
   
-  ## Serviços:
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (listar clientes)
   
-  ![image](https://user-images.githubusercontent.com/46038257/193161858-e8710ada-f81c-41ab-a5ac-556f9803d75d.png)
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (cadastrar)
   
-   ## Transações:
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (atualizar)
 
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (deletar)
+  
+  ### Serviços:
+  
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/servicos (Listar Serviços)
+  
+  ### Transações:
+   
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes (Criar Transação)
+  
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?id={id}&status={status} (Mudar status da transação)
+  
+  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?clienteId={id} (Listar transações de cliente)
 
 
  ### Modelagem para criação do banco de dados
