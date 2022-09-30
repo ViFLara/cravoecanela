@@ -67,27 +67,27 @@
   ## Endpoints:
   ### Clientes:
   
-  :heavy_check_mark:  https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (obter cliente especifico)
+  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (obter cliente especifico)
   
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (listar clientes)
+  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (listar clientes)
   
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (cadastrar)
+  :heavy_check_mark: POST - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (cadastrar)
   
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (atualizar)
+  :heavy_check_mark: PUT - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (atualizar)
 
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (deletar)
+  :heavy_check_mark: DELETE - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (deletar)
   
   ### Serviços:
   
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/servicos (Listar Serviços)
+  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/servicos (Listar Serviços)
   
   ### Transações:
    
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes (Criar Transação)
+  :heavy_check_mark: POST - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes (Criar Transação)
   
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?id={id}&status={status} (Mudar status da transação)
+  :heavy_check_mark: PATCH - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?id={id}&status={status} (Mudar status da transação)
   
-  :heavy_check_mark: https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?clienteId={id} (Listar transações de cliente)
+  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?clienteId={id} (Listar transações de cliente)
 
 
  ### Modelagem para criação do banco de dados
