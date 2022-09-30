@@ -20,7 +20,8 @@
   ## 💻 Sobre o projeto
   
   <p align="justify"> A Consultoria Fictícia Cravo&Canela, está construindo uma nova plataforma e precisa de uma API para gerenciar as transações. Utilizamos nossas habilidades em backend com Java, Banco de dados, AWS e em Frontend com Html, Css e Javascript para a contrução da plataforma. O sistema permite realizar cadastro, edição e exclusão de novos clientes, visto que cada cliente está atrelado a uma conta única (com todos os dados inclusos) que registra o histórico de sua movimentação.
-    Utilizamos Metodologias Ágeis para a definição dos entregaveís através do Trello como ferramenta para criação do backlog, detalhamento das tarefas, no formato Kanban padrão "to do, doing, done" e definição de responsável e de data de entrega das tarefas nos cards.
+      
+ <p align="justify"> Metodologias Ágeis foram empregadas para a definição dos entregaveís através do Trello como ferramenta para criação do backlog, detalhamento das tarefas, no formato Kanban padrão "to do, doing, done" e definição de responsável e de data de entrega das tarefas nos cards.
   
    Projeto desenvolvido durante o treinamento **Mulheres em Cloud** oferecida pela [Gama Academy em parceria com a McKinsey & Company](https://mulheresemcloud.corporate.gama.academy/).</p>
   
