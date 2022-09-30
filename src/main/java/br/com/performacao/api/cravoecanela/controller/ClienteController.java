@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,24 +30,28 @@ public class ClienteController {
     @Autowired
     private ClienteService service;
 
+    @CrossOrigin
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ClienteDTO createCliente(@RequestBody ClienteDTO cliente)  {
         return service.createCliente(cliente);
     }
 
+    @CrossOrigin
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)
     public void createClienteList(@RequestBody List<ClienteDTO> clientes)  {
         service.createClienteList(clientes);
     }
 
+    @CrossOrigin
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<ClienteDTO> findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
+    @CrossOrigin
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Find all Clientes")
@@ -54,11 +59,13 @@ public class ClienteController {
         return service.findAll(pageable);
     }
 
+    @CrossOrigin
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Cliente")
     public void update(@RequestBody ClienteDTO cliente) throws ChangeSetPersister.NotFoundException { service.update(cliente); }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation("Delete by id Cliente")

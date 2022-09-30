@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,18 +29,22 @@ public class TransacoesController {
     @Autowired
     private TransacoesService transacoesService;
 
+    @CrossOrigin
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public TransacoesDTO createTransacao(@RequestBody TransacoesDTO transacao)  {
         return transacoesService.createTransacao(transacao);
     }
 
+    @CrossOrigin
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)
     public void createTransacoesList(@RequestBody List<TransacoesDTO> transacoes)  {
         transacoesService.createTransacoesList(transacoes);
     }
 
+
+    @CrossOrigin
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Find all Transações")
@@ -47,6 +52,8 @@ public class TransacoesController {
         return transacoesService.findAll(pageable, clienteId);
     }
 
+
+    @CrossOrigin
     @PatchMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Transações")
