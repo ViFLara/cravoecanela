@@ -62,7 +62,7 @@
  
  Os endpoints do Backend podem ser vistos pelo Swagger:
   
-  link : http://ec2-174-129-49-15.compute-1.amazonaws.com:8081/v2/api-docs 
+  link : http://ec2-174-129-49-15.compute-1.amazonaws.com:8081/swagger-ui.html 
   
   ## Endpoints:
   ### Clientes:
