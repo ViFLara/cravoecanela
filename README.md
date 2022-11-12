@@ -13,7 +13,7 @@
       <img alt="GitHub last commit" src="https://img.shields.io/badge/project%20-%20backend-yellowgreen">
 </p>
 
-# <h1 align="center">Cravo&Canela Backend![logo](https://user-images.githubusercontent.com/82177551/193073860-e17fb5d0-5804-4134-ae93-dc18e95ea7f6.jpg)</h1>
+# <h1 align="center">Cravo&Canela Backend - Gama Academy![logo](https://user-images.githubusercontent.com/82177551/193073860-e17fb5d0-5804-4134-ae93-dc18e95ea7f6.jpg)</h1>
 
 
 
